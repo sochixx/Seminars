@@ -21,7 +21,7 @@ rational::rational(int a1, int b1)
 {
     while (b1 == 0)
     {
-        cout << "Îøèáêà, çíàìåíàòåëü ðàâåí 0\nÂâåäèòå íîâûé çíàìåíàòåëü: \n";
+        cout << "ÃŽÃ¸Ã¨Ã¡ÃªÃ , Ã§Ã­Ã Ã¬Ã¥Ã­Ã Ã²Ã¥Ã«Ã¼ Ã°Ã Ã¢Ã¥Ã­ 0\nÃ‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã­Ã®Ã¢Ã»Ã© Ã§Ã­Ã Ã¬Ã¥Ã­Ã Ã²Ã¥Ã«Ã¼: \n";
         cin >> b1;
     }
     if (a1 * b1 <= 0)
@@ -43,7 +43,7 @@ void rational::set(int a1, int b1)
 {
     while (b1 == 0)
     {
-        cout << "Îøèáêà, çíàìåíàòåëü ðàâåí 0\nÂâåäèòå íîâûé çíàìåíàòåëü:\n";
+        cout << "ÃŽÃ¸Ã¨Ã¡ÃªÃ , Ã§Ã­Ã Ã¬Ã¥Ã­Ã Ã²Ã¥Ã«Ã¼ Ã°Ã Ã¢Ã¥Ã­ 0\nÃ‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã­Ã®Ã¢Ã»Ã© Ã§Ã­Ã Ã¬Ã¥Ã­Ã Ã²Ã¥Ã«Ã¼:\n";
         cin >> b1;
     }
     if (a1 * b1 <= 0)
@@ -65,7 +65,7 @@ void rational::show()
 {
     if (a == 0 || a == b)
     {
-        cout << "Íåò äðîáíîé ÷àñòè\n";
+        cout << "ÃÃ¥Ã² Ã¤Ã°Ã®Ã¡Ã­Ã®Ã© Ã·Ã Ã±Ã²Ã¨\n";
     }
     else
     {
@@ -100,7 +100,7 @@ bool rational::operator==(const rational& other)
 
 bool rational::operator>(const rational& other)
 {
-    return this->a * other.b > other.b * this->b;
+    return this->a * other.b > other.a * this->b;
 }
 
 bool rational::operator<(const rational& other)
