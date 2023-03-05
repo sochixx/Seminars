@@ -21,7 +21,7 @@ rational::rational(int a1, int b1)
 {
     while (b1 == 0)
     {
-        cout << "Ошибка, знаменатель равен 0\n Введите новый знаменатель: \n";
+        cout << "Ошибка, знаменатель равен 0\nВведите новый знаменатель: \n";
         cin >> b1;
     }
     if (a1 * b1 <= 0)
@@ -43,7 +43,7 @@ void rational::set(int a1, int b1)
 {
     while (b1 == 0)
     {
-        cout << "Ошибка, знаменатель равен 0\n Введите новый знаменатель: \n";
+        cout << "Ошибка, знаменатель равен 0\nВведите новый знаменатель:\n";
         cin >> b1;
     }
     if (a1 * b1 <= 0)
@@ -63,7 +63,7 @@ void rational::set(int a1, int b1)
 
 void rational::show()
 {
-    if (a == 0)
+    if (a == 0 || a == b)
     {
         cout << "Нет дробной части\n";
     }
@@ -71,4 +71,52 @@ void rational::show()
     {
         cout << a << "/" << b << endl;
     }
+}
+
+rational rational::operator+(const rational& other)
+{
+    rational temp(other.a, other.b);
+    temp.set(a * other.b + b * other.a, b * other.b);
+    return temp;
+}
+
+rational& rational::operator++()
+{
+    a++;
+    return *this;
+}
+
+rational& rational::operator++(int value)
+{
+    rational temp(*this);
+    this->a++;
+    return temp;
+}
+
+bool rational::operator==(const rational& other)
+{
+    return this->a == other.a && this->b == other.b;
+}
+
+bool rational::operator>(const rational& other)
+{
+    return this->a * other.b > other.b * this->b;
+}
+
+bool rational::operator<(const rational& other)
+{
+    return this->a * other.b < other.b* this->b;
+}
+
+void rational::operator=(const rational& other)
+{
+    this->a = other.a;
+    this->b = other.b;
+}
+
+rational operator-(const rational& other1, const rational& other2)
+{
+    rational temp(other1.a, other1.b);
+    temp.set(other1.a * other2.b - other1.b * other2.a, other2.b * other1.b);
+    return temp;
 }
